@@ -22,7 +22,7 @@ public class Consulta extends Conection {
         
        while(rs.next())
        {
-            if(user.equals(rs.getString("name")) && pass.equals(rs.getString("pass") ) ){
+            if(user.equals(rs.getString("user")) && pass.equals(rs.getString("pass") ) ){
                 return true;
             }
             
@@ -34,7 +34,7 @@ public class Consulta extends Conection {
     
     public static void main (String[] args) throws SQLException{
         Consulta conn=new  Consulta();
-        System.out.println(conn.Autenticacion("",""));
+        System.out.println(conn.Autenticacion("diego","123"));
     }
     
 }

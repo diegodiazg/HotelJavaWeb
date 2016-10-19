@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import webapp.modelo.Consulta;
+import webapp.modelo.Cliente;
 
 /**
  *
@@ -74,6 +75,8 @@ public class ServletCliente extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
+            Cliente AddCliente = new Cliente();
+            AddCliente.setNombre("nombre");
         } catch (SQLException ex) {
             Logger.getLogger(ServletCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
