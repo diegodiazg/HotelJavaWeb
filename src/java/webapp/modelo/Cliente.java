@@ -9,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  *
@@ -16,10 +18,10 @@ import java.sql.Statement;
  */
 public class Cliente extends Conection {
     private int id;
-    public String nombre, apellido, nit;
+    public String nombre, apellido, nit, direccion;
     public int telefono;
     
-    public Cliente(){}
+    
     
     public int getId()
     {
@@ -36,6 +38,10 @@ public class Cliente extends Conection {
        public String getNit()
     {
         return nit;
+    }
+     public String getDireccion()
+    {
+        return direccion;
     }
        
      public int getTelefono()
@@ -58,6 +64,10 @@ public class Cliente extends Conection {
        public void setNit(String nitin)
     {
 	nit = nitin;
+    }
+          public void setDireccion(String dir)
+    {
+	direccion = dir;
     }
        
     @SuppressWarnings("empty-statement")
@@ -99,9 +109,42 @@ public class Cliente extends Conection {
         return false;
     }
      
+    public ResultSet Consulta() throws SQLException  {
+        //LinkedList<Cliente> Lista =new LinkedList<>();
+        ResultSet rs = null;
+        String consulta="select * from cliente";
+        Statement st =conn.createStatement();
+        //PreparedStatement preparedStatement = conn.prepareStatement(consulta);
+        rs =st.executeQuery(consulta);
+       // Cliente data= new Cliente();
+       // while(rs.next()){
+       //     data.setNombre(rs.getString("nombre"));
+        //    data.setApellido(rs.getString("apellido"));
+        //    data.setNit(rs.getString("nit"));
+       //     data.setTelefono(rs.getInt("telefono"));
+       //     data.setDireccion(rs.getString("direccion"));
+       //     Lista.add(data);
+       // }
+       // Array=rs.;
+       //System.out.println(Lista.size()); 
+        
+       
+       return rs;
+       // return Lista;
+    }
+     
         public static void main (String[] args) throws SQLException{
-        Cliente clientenuevo=new  Cliente();
-        System.out.println(clientenuevo.UpdateCliente(1, "diego jose","diaz m", "433", 78663, "ciudad3"));
+        Cliente miconsulta=new  Cliente();
+        //LinkedList<Cliente> MiLista =new LinkedList<>();
+        ResultSet b=miconsulta.Consulta();
+        while(b.next()){
+         // b.getString("nombre");
+          System.out.println(b.getString("nombre"));
+       }
+            //System.out.println(b.getString("nombre"));
+        
+       
+       // System.out.println(MiLista.getFirst());
     }
        
 }

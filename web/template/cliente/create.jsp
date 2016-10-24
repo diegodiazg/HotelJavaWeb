@@ -29,7 +29,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><span>Hotel</span>Palmas</a>
+                <a class="navbar-brand" href="/webapp/index.jsp"><span>Hotel</span>Palmas</a>
                 <ul class="user-menu">
                     <li class="dropdown pull-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>
@@ -53,7 +53,7 @@
         </form>
         <ul class="nav menu">
             <li class="active">
-                <a href="template/cliente/create.jsp">
+                <a href="index.jsp">
                     <svg class="glyph stroked dashboard-dial">
                         <use xlink:href="#stroked-dashboard-dial">
                         </use>
@@ -61,7 +61,7 @@
                     Dashboard
                 </a>
             </li>
-            <li><a href="widgets.html"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Clientes</a></li>
+            <li><a href="index.jsp""><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Clientes</a></li>
             <li><a href="charts.html"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Reservaciones</a></li>
             <li><a href="tables.html"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Hotel</a></li>
             <li><a href="forms.html"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Usuarios</a></li>
