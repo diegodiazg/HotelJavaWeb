@@ -127,10 +127,15 @@
                                           <td><%= b.getString("telefono") %></td>
                                            <td><%= b.getString("direccion") %></td>
                                           
-                                           <td><a href="#<%= b.getString("id") %>"> <svg width="30" height="30" class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg>
-                                                   </a>
-                                           <a href="#<%= b.getString("id") %>"> <svg width="30" height="30" class="glyph stroked trash"><use xlink:href="#stroked-trash"></use></svg>
-                                                   </a>
+                                           <td class="todo-list">
+                                              
+                                                    <li class="todo-list-item">
+                                                  	
+                                                        <a href="#<%= b.getString("id") %>" class="trash"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg></a>
+                                                        <a href="#<%= b.getString("id") %>" class="trash"><svg  class="glyph stroked trash"><use xlink:href="#stroked-trash"></use></svg></a>
+                                                        
+                                                     </li>
+                                              
                                            </td>
                                         </tr>
                                         <%
