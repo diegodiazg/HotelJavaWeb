@@ -76,20 +76,20 @@
                                                 <div class="row">
             <ol class="breadcrumb">
                 <li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-                <li class="active">Cliente</li>
+                <li class="active">Habitacion</li>
             </ol>
         </div><!--/.row-->
         
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Nuevo Cliente</h1>
+                <h1 class="page-header">Nueva Habitacion</h1>
             </div>
         </div><!--/.row-->
         <div class="row">
             <div class="col-lg-12">
-                <div class="panel panel-default">
+                <div class="panel panel-default">ServletHabitacion
                     <div class="panel-body">
-                        <form role="form" name="form" method="post" action="/webapp/ServletCliente">
+                        <form role="form" name="form" method="post" action="/webapp/ServletHabitacion">
                         <div class="col-md-6">
                             
                             
@@ -99,16 +99,16 @@
                                 </div>
                                                                 
                                 <div class="form-group">
-                                    <label>Apellido</label>
-                                    <input name="apellido" type="text" class="form-control">
+                                    <label>Camas</label>
+                                    <input name="camas" type="text" class="form-control">
                                 </div>
                                   <div class="form-group">
-                                    <label>NIT</label>
-                                    <input name="nit" type="text" class="form-control">
+                                    <label>Costo</label>
+                                    <input name="costo"  type="text"  class="form-control">
                                 </div>
                                   <div class="form-group">
-                                    <label>Telefono</label>
-                                    <input name="tel" type="phone" class="form-control">
+                                    <label>Hotel</label>
+                                    <input name="h" type="text"  class="form-control">
                                 </div>
                           
                             </div>
@@ -116,7 +116,7 @@
 
                                 
                                 <div class="form-group">
-                                    <label>Direccion</label>
+                                    <label>Descripcion</label>
                                     <textarea name="dir" class="form-control" rows="3"></textarea>
                                 </div>
                                 

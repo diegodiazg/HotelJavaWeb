@@ -1,10 +1,15 @@
+
 <%-- 
     Document   : create
     Created on : Oct 19, 2016, 2:21:51 AM
     Author     : diego
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language ="java" %>
+<%@page import = "webapp.modelo.Habitacion"%>
+<%@page import = "java.sql.ResultSet"%>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,6 +19,7 @@
         <link href="../../lumino/css/bootstrap.min.css" rel="stylesheet">
         <link href="../../lumino/css/datepicker3.css" rel="stylesheet">
         <link href="../../lumino/css/styles.css" rel="stylesheet">
+        <link href="../../lumino/css/bootstrap-table.css" rel="stylesheet">
 
 <!--Icons-->
 <script src="../../lumino/js/lumino.glyphs.js"></script>
@@ -53,7 +59,7 @@
         </form>
         <ul class="nav menu">
             <li class="active">
-                <a href="index.jsp">
+                <a href="/webapp/index.jsp">
                     <svg class="glyph stroked dashboard-dial">
                         <use xlink:href="#stroked-dashboard-dial">
                         </use>
@@ -61,7 +67,7 @@
                     Dashboard
                 </a>
             </li>
-             <li><a href="/webapp/template/cliente/index.jsp"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Clientes</a></li>
+            <li><a href="/webapp/template/cliente/index.jsp"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Clientes</a></li>
             <li><a href="/webapp/template/reservacion/index.jsp"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Reservaciones</a></li>
             <li><a href="/webapp/template/hotel/index.jsp"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Hotel</a></li>
             <li><a href="forms.html"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Usuarios</a></li>
@@ -76,54 +82,68 @@
                                                 <div class="row">
             <ol class="breadcrumb">
                 <li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-                <li class="active">Cliente</li>
+                <li class="active">Habitacion</li>
             </ol>
         </div><!--/.row-->
         
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Nuevo Cliente</h1>
+            <div class="col-lg-6">
+                <h1 class="page-header">Habitacion</h1>
+            </div>
+            <div class="col-lg-6">
+                <a href="/webapp/template/habitacion/create.jsp">
+                    <svg class="glyph stroked plus sign"><use xlink:href="#stroked-plus-sign"/></use></svg>
+            </a>
             </div>
         </div><!--/.row-->
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form role="form" name="form" method="post" action="/webapp/ServletCliente">
-                        <div class="col-md-6">
-                            
-                            
-                                <div class="form-group">
-                                    <label>Nombre</label>
-                                    <input name="nombre" type="text" class="form-control">
-                                </div>
-                                                                
-                                <div class="form-group">
-                                    <label>Apellido</label>
-                                    <input name="apellido" type="text" class="form-control">
-                                </div>
-                                  <div class="form-group">
-                                    <label>NIT</label>
-                                    <input name="nit" type="text" class="form-control">
-                                </div>
-                                  <div class="form-group">
-                                    <label>Telefono</label>
-                                    <input name="tel" type="phone" class="form-control">
-                                </div>
-                          
-                            </div>
-                            <div class="col-md-6">
-
+                        <table data-toggle="table" id="table-style" data-row-style="rowStyle">
+                            <thead>
+                                <th data-field="name">Nombre</th>
+                                <th>Descripcion</th>
+                                <th>Camas</th>
+                                <th>Costo</th>
+                                <th>Estado</th>
+                                <th>Operaciones</th>
+                            </thead>
+                            <tbody>
+                                <%
+                                   Habitacion miconsulta=new  Habitacion();
+                                     ResultSet b=miconsulta.Consulta();
                                 
-                                <div class="form-group">
-                                    <label>Direccion</label>
-                                    <textarea name="dir" class="form-control" rows="3"></textarea>
-                                </div>
-                                
-                                <button type="submit" class="btn btn-primary">Guardar</button>
-                                <button type="reset" class="btn btn-default">Limpiar</button>
-                            </div>
-                        </form>
+                              %>
+                              
+                              <%
+                                    while (b.next()) {
+                                        %>
+                                        <tr>
+                                        
+                                        <td><%= b.getString("nombre") %></td>
+                                         <td><%= b.getString("descripcion") %></td>
+                                          <td><%= b.getString("camas") %></td> 
+                                          <td><%= b.getString("costo") %></td>
+                                           <td><%= b.getString("estado") %></td>
+                                          
+                                           <td class="todo-list">
+                                              
+                                                    <li class="todo-list-item">
+                                                  	
+                                                        <a href="#<%= b.getString("id") %>" class="trash"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg></a>
+                                                        <a href="#<%= b.getString("id") %>" class="trash"><svg  class="glyph stroked trash"><use xlink:href="#stroked-trash"></use></svg></a>
+                                                        
+                                                     </li>
+                                              
+                                           </td>
+                                        </tr>
+                                        <%
+                                    }
+                                %>
+                            </tbody>
+                            
+                        </table>
                     </div>
                 </div>
             </div><!-- /.col-->
@@ -152,6 +172,7 @@
     <script src="../../lumino/js/jquery-1.11.1.min.js"></script>
     <script src="../../lumino/js/bootstrap.min.js"></script>
     <script src="../../lumino/js/bootstrap-datepicker.js"></script>
+    <script src="../../lumino/js/bootstrap-table.js"></script>
     <script>
         $('#calendar').datepicker({
         });
@@ -172,4 +193,3 @@
     </script>   
 </body>
 </html>
-

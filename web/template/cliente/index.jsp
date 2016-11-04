@@ -67,11 +67,11 @@
                     Dashboard
                 </a>
             </li>
-            <li><a href="index.jsp""><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Clientes</a></li>
-            <li><a href="charts.html"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Reservaciones</a></li>
-            <li><a href="tables.html"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Hotel</a></li>
-            <li><a href="forms.html"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Usuarios</a></li>
-            <li><a href="panels.html"><svg class="glyph stroked app-window"><use xlink:href="#stroked-app-window"></use></svg> Habitaciones</a></li>
+            <li><a href="/webapp/template/cliente/index.jsp""><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Clientes</a></li>
+            <li><a href="/webapp/template/reservacion/index.jsp"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Reservaciones</a></li>
+            <li><a href="/webapp/template/hotel/index.jsp"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Hotel</a></li>
+            <li><a href="/webapp/forms.html"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Usuarios</a></li>
+            <li><a href="/webapp/template/habitacion/index.jsp"><svg class="glyph stroked app-window"><use xlink:href="#stroked-app-window"></use></svg> Habitaciones</a></li>
        
         </ul>
 

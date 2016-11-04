@@ -76,39 +76,39 @@
                                                 <div class="row">
             <ol class="breadcrumb">
                 <li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-                <li class="active">Cliente</li>
+                <li class="active">Reservacion</li>
             </ol>
         </div><!--/.row-->
         
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Nuevo Cliente</h1>
+                <h1 class="page-header">Nueva Reservacion</h1>
             </div>
         </div><!--/.row-->
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form role="form" name="form" method="post" action="/webapp/ServletCliente">
+                        <form role="form" name="form" method="post" action="/webapp/ServletRservacion">
                         <div class="col-md-6">
                             
                             
                                 <div class="form-group">
-                                    <label>Nombre</label>
-                                    <input name="nombre" type="text" class="form-control">
+                                    <label>Fecha Ingreso</label>
+                                    <input name="in" type="date" class="form-control">
                                 </div>
                                                                 
                                 <div class="form-group">
-                                    <label>Apellido</label>
-                                    <input name="apellido" type="text" class="form-control">
+                                    <label>Fecha Salida</label>
+                                    <input name="out" type="date" class="form-control">
                                 </div>
                                   <div class="form-group">
-                                    <label>NIT</label>
-                                    <input name="nit" type="text" class="form-control">
+                                    <label>Cliente</label>
+                                    <input name="cliente"  type="number"  class="form-control">
                                 </div>
                                   <div class="form-group">
-                                    <label>Telefono</label>
-                                    <input name="tel" type="phone" class="form-control">
+                                    <label>Habitacion</label>
+                                    <input name="h" type="number"  class="form-control">
                                 </div>
                           
                             </div>
@@ -116,7 +116,7 @@
 
                                 
                                 <div class="form-group">
-                                    <label>Direccion</label>
+                                    <label>Orden Especial</label>
                                     <textarea name="dir" class="form-control" rows="3"></textarea>
                                 </div>
                                 
